@@ -1,9 +1,7 @@
-int main(){
-    typedef struct Element Element;
-    struct Element
-    {
-        int nombre = 4;
-        printf("%d",nombre);
-        Element *suivant;
-    };
-}
+#include <stdlib.h>
+ 
+struct test_struct
+{
+    int val;
+    struct test_struct *next;
+};
