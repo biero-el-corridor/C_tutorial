@@ -1,3 +1,5 @@
+//source 
+//https://www.geeksforgeeks.org/linked-list-set-1-introduction/
 // A simple C program to introduce
 // a linked list
 #include <stdio.h>
@@ -6,7 +8,7 @@
 struct Node {
     //definitions of int 
 	int data;
-	
+
     //definitions of the pointer that point a memory locations 
 	struct Node* next;
 };
@@ -86,8 +88,8 @@ anything yet */
 		|			 |			 |
 		|			 |			 |
 	+---+---+	 +---+---+	 +----+----+
-	| 1 | o----->| 2 | o-----> | # | # |
-	+---+---+	 +---+---+	 +----+----+	 */
+	| 1 | o----->| 2 | o---> | # | # |
+	+---+---+	 +---+---+	 +----+----+*/
 
 	third->data = 3; // assign data to third node
 	third->next = NULL;
