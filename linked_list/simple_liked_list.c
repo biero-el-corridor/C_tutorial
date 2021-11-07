@@ -33,9 +33,9 @@ void printlist(struct Node* n){
 int main()
 {
     //definitions of the 3 memory area
-	struct Node* head = NULL;
-	struct Node* second = NULL;
-	struct Node* third = NULL;
+	struct Node *head = NULL;
+	struct Node *second = NULL;
+	struct Node *third = NULL;
 
 	// allocate 3 nodes in the heap
 	head = (struct Node*)malloc(sizeof(struct Node));

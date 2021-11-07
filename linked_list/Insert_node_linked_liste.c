@@ -7,7 +7,7 @@
 //first way add a node at the begening of the linked list 
 
 #include <stdio.h>
-
+#include <stdlib.h>
 struct Node{
 
     //définitions de la donnée 
@@ -16,22 +16,46 @@ struct Node{
     struct Node *next; 
 };
 
+
+//fonctions de print du contenue de la list chainée
+int PrintList(struct Node* n){
+    //temps que la valeur du pointeur next n'est pas egal a null
+    while (n != NULL)
+    {
+        printf("%d\n", n->data); 
+        //on passe a la prochaine liste via le pointeur de fin 
+        n = n->next; 
+    }
+    
+}
+
+//ajout de la jonctions pour ajouter un noeud (liste) en début de chaine
+void push(struct Node** head_ref, int new_data){
+
+    //définitions de la taille du nouveaux neud 
+    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node)); 
+
+    //new data récupére les donnée de new_node
+    new_node->data = new_data; 
+
+    //le pointeur de la nouvelle liste pointe vers le head (donc le 1er emplacment de la liste chainée)
+    //mais du coup si on pointe sur le 1er element il devient le deuxiéme
+    new_node->next = (*head_ref); 
+
+    //je ne cmprend pas celuis la 
+    (*head_ref) = new_node; 
+}
+
 int main(){
-    //créations de l'emplacment mémoire de head et node 
+    //créations d'une structure qui ne vaut rien 
     struct Node* head = NULL; 
-    struct Node* second = NULL; 
 
-    //définitions de la taille de l'emplacement mémoire aloué a head et node
-    head = (struct Node*)malloc(sizeof(struct Node)); 
-    second = (struct Node*)malloc(sizeof(struct Node)); 
+    //apelle de la fontions push 
+    //le 1er agument pointe vers le numero de l'emplacment mémoire de head
+    //
+    push(&head,1); 
+    push(&head,2); 
+    push(&head,3); 
 
-    //définitions le la variable de type int data a 5
-    head->data = 5; 
-    //définitions du pointeur de la chaine a second 
-    //la suite de la liste seras donc second 
-    head->next = second;
-
-    second->data = 10; 
-    second->next = NULL;  
-
+    PrintList(head); 
 }
