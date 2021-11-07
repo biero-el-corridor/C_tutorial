@@ -70,17 +70,15 @@ void insertAfter(struct Node* prev_node, int new_data){
 
 int main(){
     //créations d'une structure qui ne vaut rien 
-    struct Node* second = NULL; 
     struct Node* head = NULL; 
-    struct Node* third = NULL;
-    struct Node* fourght = NULL; 
+
     //apelle de la fontions push 
     //le 1er agument pointe vers le numero de l'emplacment mémoire de head
     //le deuxiéme argument et la valeur de data
-    push(&second,2);
+    push(&head,2);
     push(&head,0); 
-    push(&third,3); 
-    push(&fourght,4); 
+    push(&head,3); 
+    push(&head,4); 
 
     //insertAfter(third->next,6);
     PrintList(head); 
