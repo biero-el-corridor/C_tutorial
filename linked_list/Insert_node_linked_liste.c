@@ -21,6 +21,7 @@ int PrintList(struct Node* n){
     while (n != NULL)
     {
         printf("%d\n", n->data); 
+        printf("%d\n", n->next); 
         //on passe a la prochaine liste via le pointeur de fin 
         n = n->next; 
     }
@@ -40,7 +41,7 @@ void push(struct Node** head_ref, int new_data){
     new_node->next = (*head_ref); 
 
     //je ne cmprend pas celuis la 
-    //(*head_ref) = new_node; 
+    (*head_ref) = new_node; 
 }
 
 
@@ -54,7 +55,7 @@ void insertAfter(struct Node* prev_node, int new_data){
     }
     //alocations of memory area for each iterations of new_node 
     //definitions of the size of new_node 
-    struct Node *new_node = (struct Node*) malloc(sizeof(struct Node)); 
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node)); 
 
     //attributions of data in the new node
     new_node->data = new_data; 
@@ -67,18 +68,20 @@ void insertAfter(struct Node* prev_node, int new_data){
 }
 
 
-
-
-
 int main(){
     //créations d'une structure qui ne vaut rien 
+    struct Node* second = NULL; 
     struct Node* head = NULL; 
+    struct Node* third = NULL;
+    struct Node* fourght = NULL; 
     //apelle de la fontions push 
     //le 1er agument pointe vers le numero de l'emplacment mémoire de head
     //le deuxiéme argument et la valeur de data
-    push(&head,1); 
-    insertAfter(head->next,4); 
-    push(&head,2); 
-    push(&head,3); 
+    push(&second,2);
+    push(&head,0); 
+    push(&third,3); 
+    push(&fourght,4); 
+
+    //insertAfter(third->next,6);
     PrintList(head); 
 }
